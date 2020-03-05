@@ -15,5 +15,8 @@ RUN npm run build
 
 FROM nginx
 
+# this is in order to open port, elastickbeanstalk gives error
+EXPOSE 80
+
 COPY --from=builder  /app/build /usr/share/nginx/html
 
